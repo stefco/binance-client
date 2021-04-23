@@ -17,6 +17,7 @@ use self::data::account::get::request::Query as AccountGetQuery;
 use self::data::account::get::response::Response as AccountGetResponse;
 use self::data::depth::get::request::Query as DepthGetQuery;
 use self::data::depth::get::response::Response as DepthGetResponse;
+use self::data::depth_ticker::get::response::Response as DepthTickerGetResponse;
 use self::data::exchange_info::get::response::Response as ExchangeInfoGetResponse;
 use self::data::klines::get::request::Query as KlinesGetQuery;
 use self::data::klines::get::response::Response as KlinesGetResponse;
@@ -135,6 +136,16 @@ impl Client {
         self.execute::<DepthGetResponse>(
             Method::GET,
             format!("/api/v3/depth?{}", request.to_string()),
+        )
+    }
+
+    ///
+    /// The real-time best ask/bids on the order book.
+    ///
+    pub fn depth_ticker(&self) -> Result<DepthTickerGetResponse> {
+        self.execute::<DepthTickerGetResponse>(
+            Method::GET,
+            format!("api/v3/ticker/bookTicker"),
         )
     }
 
@@ -282,7 +293,7 @@ impl Client {
     ///
     /// Executes an unauthorized request.
     ///
-    fn execute<T>(&self, method: Method, url: String) -> Result<T>
+    pub fn execute<T>(&self, method: Method, url: String) -> Result<T>
     where
         T: serde::de::DeserializeOwned,
     {

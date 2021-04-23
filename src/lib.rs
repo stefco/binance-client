@@ -13,6 +13,8 @@ pub use self::http_api_v3::data::account::get::request::Query as AccountGetQuery
 pub use self::http_api_v3::data::account::get::response::Response as AccountGetResponse;
 pub use self::http_api_v3::data::depth::get::request::Query as DepthGetQuery;
 pub use self::http_api_v3::data::depth::get::response::Response as DepthGetResponse;
+pub use self::http_api_v3::data::depth_ticker::get::response::Response as DepthTickerGetResponse;
+pub use self::http_api_v3::data::depth_ticker::get::response::DepthTicker as DepthTickerGetResponseElement;
 pub use self::http_api_v3::data::depth_element::DepthElement;
 pub use self::http_api_v3::data::exchange_info::get::response::Response as ExchangeInfoGetResponse;
 pub use self::http_api_v3::data::exchange_info::symbol::status::Status as ExchangeInfoSymbolStatus;

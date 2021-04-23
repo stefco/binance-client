@@ -17,3 +17,4 @@ pub mod order_time_in_force;
 pub mod order_type;
 pub mod permission;
 pub mod time;
+pub mod depth_ticker;

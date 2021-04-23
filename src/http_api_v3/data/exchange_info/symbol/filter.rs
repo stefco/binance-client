@@ -5,6 +5,9 @@
 use rust_decimal::Decimal;
 use serde::Deserialize;
 
+///
+/// Filters used to specify trading pair behaviors.
+///
 #[derive(Debug, Deserialize, Clone, PartialEq)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE", tag = "filterType")]
 pub enum Filter {
