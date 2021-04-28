@@ -145,7 +145,7 @@ impl Client {
     pub fn depth_ticker(&self) -> Result<DepthTickerGetResponse> {
         self.execute::<DepthTickerGetResponse>(
             Method::GET,
-            format!("api/v3/ticker/bookTicker"),
+            format!("/api/v3/ticker/bookTicker"),
         )
     }
 
