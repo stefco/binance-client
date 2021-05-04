@@ -11,6 +11,7 @@ pub(crate) mod websocket;
 pub use self::error::Error;
 pub use self::http_api_v3::data::account::get::request::Query as AccountGetQuery;
 pub use self::http_api_v3::data::account::get::response::Response as AccountGetResponse;
+pub use self::http_api_v3::data::account::balance::Balance as AccountBalance;
 pub use self::http_api_v3::data::depth::get::request::Query as DepthGetQuery;
 pub use self::http_api_v3::data::depth::get::response::Response as DepthGetResponse;
 pub use self::http_api_v3::data::depth_ticker::get::response::Response as DepthTickerGetResponse;
